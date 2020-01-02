@@ -13,8 +13,18 @@ public class School implements SchoolStat {
     }
 
     public void addStudent(Student student){
-
+        list.add(student);
+        count++;
     }
+
+    public void printStudent(){
+        for (int i=0; i<list.size();i++
+             ) {
+            System.out.println(list.get(i));
+        }
+     }
+
+
 
     public int getCount() {
         return count;
@@ -22,17 +32,35 @@ public class School implements SchoolStat {
 
     @Override
     public Student getBestStudent() {
+        double bestStudent=5;
+        for (Student student:list){
+            if (student.getAverageGrade()< bestStudent){
+                bestStudent=student.getAverageGrade();
+            }
+        } for (Student student:list){
+            if (student.getAverageGrade()==bestStudent){
+                return student;
+            }
+        }
         return null;
     }
 
     @Override
     public int getAverageAbsence() {
-        return 0;
+        double abs=0;
+        for (Student student:list){
+            abs+=student.getAbsence();
+        }
+        return (int) ((double)abs/list.size());
     }
 
     @Override
     public double getAverageGrade() {
-        return 0;
+        double avg = 0;
+        for(Student student: list) {
+            avg += student.getAverageGrade();
+        }
+        return avg/getCount();
     }
 
     @Override
@@ -42,6 +70,16 @@ public class School implements SchoolStat {
 
     @Override
     public Student getTheWorstStudent() {
+        double worstStudent=1;
+        for (Student student:list){
+            if (student.getAverageGrade()> worstStudent){
+                worstStudent=student.getAverageGrade();
+            }
+        } for (Student student:list){
+            if (student.getAverageGrade()==worstStudent){
+                return student;
+            }
+        }
         return null;
     }
 

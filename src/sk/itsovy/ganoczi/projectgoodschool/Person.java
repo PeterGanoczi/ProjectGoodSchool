@@ -1,6 +1,6 @@
 package sk.itsovy.ganoczi.projectgoodschool;
 
-abstract class Person extends Student {
+abstract public class Person {
     private String firstName;
     private String lastName;
 

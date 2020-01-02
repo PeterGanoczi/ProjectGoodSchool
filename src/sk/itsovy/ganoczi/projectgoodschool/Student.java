@@ -1,6 +1,6 @@
 package sk.itsovy.ganoczi.projectgoodschool;
 
-public class Student extends School {
+public class Student extends Person {
 
     private byte g_Mat;
     private byte g_Eng;
@@ -27,8 +27,17 @@ public class Student extends School {
         return g_Inf;
     }
 
-    protected double getAverageGrade(){
+    public double getAverageGrade(){
         return(double) (g_Eng+g_Inf+g_Mat)/3;
+    }
+
+    @Override
+    public String toString(){
+        return  "Name: "  + getFullName() +
+                ", Mat: " + getG_Mat() +
+                ", Eng: " + getG_Eng() +
+                ", Inf: " + getG_Inf() +
+                ", Abs: " + getAbsence();
     }
 
     public int getAbsence() {
