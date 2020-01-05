@@ -38,11 +38,17 @@ public class Main {
         }
 
         school.printStudent();
-
+        System.out.println("-----------------------------------------");
+        System.out.println("Count of students: "+school.getCount());
         System.out.println("Best student: " +school.getBestStudent());
         System.out.println("Worst student: " +school.getTheWorstStudent());
         System.out.println("Average absence: " +school.getAverageAbsence());
         System.out.println("Average grade: "+school.getAverageGrade());
+        System.out.println("Average math grade: "+school.getAverageGradeFromMath());
+        System.out.println("Lowest absence: "+ school.getTheLowestAbsence());
+        System.out.println("Sorted by last name:" +school.getListSortedByLastNameAsc());
+        System.out.println("Sorted by absence: " +school.getListSortedByAbsenceDesc());
+
 
 
     }
